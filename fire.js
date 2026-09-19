@@ -53,18 +53,10 @@ function renderFire() {
             const pixelIndex = column + ( fireWidth * row )
             const fireIntensity = firePixelsArray[pixelIndex]
 
-            if (debug) {
-                html += '<td>'
-                html += `<div class="pixel-index">${pixelIndex}</div>`
-                html += fireIntensity
-                html += '</td>'
-            } else {
-                const color = fireColorsPalette[fireIntensity]
-                const colorString = `${color.r},${color.g},${color.b}`
-                html += `<td class="pixel" style="background-color: rgb(${colorString})">`
-                html += '</td>'
-            }
-
+            const color = fireColorsPalette[fireIntensity]
+            const colorString = `${color.r},${color.g},${color.b}`
+            html += `<td class="pixel" style="background-color: rgb(${colorString})">`
+            html += '</td>'
         }
         html += '</tr>'
     }
